@@ -8,7 +8,6 @@ public class DoorEvent {
 	 private int doorNo;
 	
 	 Service service = new Service();
-	 ArrayList<ListeningService> arr= new ArrayList<>();
 
 	 
 	 public DoorEvent(int floorNo, int doorNo) {
@@ -24,24 +23,4 @@ public class DoorEvent {
 		return doorNo;
 	}
 	
-	public void addListeners(ListeningService listeners) {
-		arr.add(listeners);
-	}
-	
-	public void openDoor() {
-		 System.out.println("Door opened->"+getFloorNo()+"\t"+getDoorNo());
-		 for(ListeningService listeners  : arr) {
-				listeners.on();
-			}
-		 
-	 }
-	 
-	 public void closeDoor() {
-		 System.out.println("Door closed->"+getFloorNo()+"\t"+getDoorNo());
-		 for(ListeningService listeners  : arr) {
-				listeners.off();		 
-	 }
-		 
-	 }
-
 }
