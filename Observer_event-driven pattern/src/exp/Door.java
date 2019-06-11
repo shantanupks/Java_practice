@@ -12,21 +12,20 @@ public class Door {
 	
 	public void openDoor() {
 		 System.out.println("Door opened");
-		 DoorEvent event = new DoorEvent();
-		 
-		 
-		 
+		 DoorEvent event = new DoorEvent(4,5);
+		 		 
 		 for(ListeningService listeners  : arr) {
-				listeners.on();
+				listeners.on(event);
 			}
 		 
 	 }
 	 
 	 public void closeDoor() {
-		 System.out.println("Door closed->"+getFloorNo()+"\t"+getDoorNo());
+		 System.out.println("Door opened");
+		 DoorEvent event = new DoorEvent(4,5);
 		 for(ListeningService listeners  : arr) {
-				listeners.off();		 
-	 }
-		 
+				listeners.off(event);		 
+	 }		 
 
+}
 }

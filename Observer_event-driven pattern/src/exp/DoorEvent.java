@@ -6,9 +6,6 @@ public class DoorEvent {
 	
 	 private int floorNo;
 	 private int doorNo;
-	
-	 Service service = new Service();
-
 	 
 	 public DoorEvent(int floorNo, int doorNo) {
 		 this.floorNo=floorNo;

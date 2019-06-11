@@ -2,7 +2,7 @@ package exp;
 
 public interface ListeningService {
 	
-	public void on();
-	public void off();
+	public void off(DoorEvent event);
+	public void on(DoorEvent event);
 
 }

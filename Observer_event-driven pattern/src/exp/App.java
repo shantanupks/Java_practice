@@ -7,7 +7,7 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		DoorEvent door = new DoorEvent(1,2);
+		Door door = new Door();
 		ListeningService ac = new AC();
 		ListeningService lighting = new Lighting();
 		

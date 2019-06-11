@@ -3,7 +3,12 @@ package exp;
 public class Singleton {
 	public static int COUNT = 0;
 	private static Singleton instance = null;
-	private Singleton() {}
+	public String s;
+	
+	private Singleton() {
+		this.s = "ssssssss";
+		System.out.println(s);
+	}
 
 	
 	public static Singleton getInstance(){
