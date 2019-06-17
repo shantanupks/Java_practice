@@ -1,6 +1,6 @@
 package exp;
 
-// observer/lister/event-driven pattern
+// observer/listener/event-driven pattern
 
 public class App {
 
