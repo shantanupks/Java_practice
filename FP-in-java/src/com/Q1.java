@@ -32,6 +32,7 @@ public class Q1 {
 		
 		menu.removeIf(item->item.equals("nveg"));
 		System.out.println(menu);
+		
 
 
 

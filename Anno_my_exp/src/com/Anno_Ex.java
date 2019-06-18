@@ -1,6 +1,12 @@
 package com;
 
+import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -85,7 +91,7 @@ class Services{
 
 public class Anno_Ex {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		// TODO Auto-generated method stub
 		
 		Container container = new Container();
@@ -94,13 +100,10 @@ public class Anno_Ex {
 		container.processRequest("update");
 		
 		Test_Class t = new Test_Class();
-		t.doBefore();
-		t.TestSome();
-		
-		
-		
 		
 
+
 	}
+
 
 }
