@@ -24,6 +24,8 @@ public class App {
 		System.out.println(r2);
 		
 		Lib.forEach(r2, e->System.out.println(" "+e));
+		
+		
 					
 		
 	}

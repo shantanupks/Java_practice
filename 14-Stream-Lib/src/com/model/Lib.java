@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Lib<E> {
+public class Lib<E, R> {
 
 	public static <E> List<E> filter(List<E> inp, Predicate<E> predicate) {
 		List<E> result = new ArrayList<E>();
@@ -33,4 +33,48 @@ public class Lib<E> {
 			consumer.accept(e);
 		}
 	}
+	
+	List<E> out = new ArrayList();
+	
+	Function<Function<List<E>, Predicate<E>>, Function<List<E>,>> filter2 = inpFilter2->{
+		return l->{
+			for(E e:l) {
+				if(inpFilter2.test(e));
+				out.add(e);
+			}
+			
+		};
+		
+	};
+	
+	Function<List<E>, E>funWrapper = inpFun ->{
+		
+		return null;
+		
+	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
