@@ -16,6 +16,13 @@ public class App {
 				new Product(78312, "item-6", 4000.00)
 				);
 		
+		double result=0;		
+		
+		for(Product product : list) {
+			if(product.getPrice()>3000) {
+				result = result + product.getPrice();
+			}
+		}
 		
 		List<Product> r1=Lib.filter(list, e->e.price>5000);
 		List<String> r2 =Lib.map(r1, e->e.getName());

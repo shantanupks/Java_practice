@@ -15,6 +15,10 @@ public class Lib<E, R> {
 			{
 				if(predicate.test(e))
 				result.add(e);
+				
+				
+				
+				
 			}
 		}
 		return result;

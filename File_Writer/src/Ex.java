@@ -25,10 +25,10 @@ class WriteToFile{
 public class Ex {
 	public static void main(String[] args) {
 		
-		Consumer<String> fileWriter = s->System.out.println("file written");
-		Consumer<String> logWriter = s->System.out.println("Log written");
+		Consumer<String> consoleWriter = s->System.out.println(s);
+		Consumer<String> fileWriter = s->WriteToFile.writeToFile(s);
 		
-		Consumer<String> composer = logWriter.andThen(fileWriter);
+		Consumer<String> composer = consoleWriter.andThen(fileWriter);
 		
 		composer.accept("dddd");
 	}
