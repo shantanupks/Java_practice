@@ -1,6 +1,5 @@
 package com.model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +20,6 @@ public class App {
 		List<Product> r1=Lib.filter(list, e->e.price>5000);
 		List<String> r2 =Lib.map(r1, e->e.getName());
 		
-		System.out.println(r2);
 		
 		Lib.forEach(r2, e->System.out.println(" "+e));
 		

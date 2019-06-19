@@ -34,47 +34,7 @@ public class Lib<E, R> {
 		}
 	}
 	
-	List<E> out = new ArrayList();
-	
-	Function<Function<List<E>, Predicate<E>>, Function<List<E>,>> filter2 = inpFilter2->{
-		return l->{
-			for(E e:l) {
-				if(inpFilter2.test(e));
-				out.add(e);
-			}
-			
-		};
-		
-	};
-	
-	Function<List<E>, E>funWrapper = inpFun ->{
-		
-		return null;
-		
-	};
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }
