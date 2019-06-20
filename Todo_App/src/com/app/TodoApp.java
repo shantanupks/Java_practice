@@ -13,12 +13,7 @@ public class TodoApp {
 	public static void main(String[] args) {
 		
 		TodoService todoService = new TodoService();
-		todoService.addTodo("title1");
-		todoService.addTodo("title5");
-		todoService.addTodo("title3");
-		todoService.addTodo("title2");
-		todoService.addTodo("title4");
-		
+
 		
 //		todoService.addTodoGood("title1");
 //		todoService.addTodoGood("title1");
@@ -27,10 +22,10 @@ public class TodoApp {
 //		todoService.addTodoGood("title4");
 
 		
-		todoService.editTodo(1, "title11");
-		//todoService.deleteTodo(1);
-		todoService.completeTodo(1);
-		todoService.completeTodo(4);
+//		todoService.editTodo(1, "title11");
+//		//todoService.deleteTodo(1);
+//		todoService.completeTodo(1);
+//		todoService.completeTodo(4);
 		
 		//todoService.completeAll();
 
@@ -46,18 +41,17 @@ public class TodoApp {
 		//list.forEach(System.out::println);
 		
 		//todoService.completeAll();
-		Comparator<Todo> comId = (o1,o2)->Integer.compare(o1.getId(), o2.getId());
-		Comparator<Todo> comTitle = (o1,o2)->o1.getTitle().compareTo(o2.getTitle());
-		Comparator<Todo> comDate = (o1,o2)->o1.getDate().compareTo(o2.getDate());
-		
-		Predicate<Todo> predActive = e->e.isCompleted()==false;
-		Predicate<Todo> predCompleted = e->e.isCompleted()==true;		
-	
-		List<Todo> list= todoService.filter(predActive);
+//		Comparator<Todo> comId = (o1,o2)->Integer.compare(o1.getId(), o2.getId());
+//		Comparator<Todo> comTitle = (o1,o2)->o1.getTitle().compareTo(o2.getTitle());
+//		Comparator<Todo> comDate = (o1,o2)->o1.getDate().compareTo(o2.getDate());
+//		
+//		Predicate<Todo> predActive = e->e.isCompleted()==false;
+//		Predicate<Todo> predCompleted = e->e.isCompleted()==true;		
+//	
+//		List<Todo> list= todoService.filter(predActive);
 //		list.forEach(System.out::println);
 
 //		List<Todo> list=todoService.sort(comId);
-		list.forEach(System.out::println);
 		//todoService.showTodo();
 		
 

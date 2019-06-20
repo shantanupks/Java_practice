@@ -8,12 +8,12 @@ public class Todo {
 	private boolean completed;
 	private LocalDateTime date;
 
-	public Todo(int id, String title, boolean completed, LocalDateTime date) {
+	public Todo(int id, String title) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.completed = completed;
-		this.date = date;
+		this.completed = false;
+		this.date = LocalDateTime.now();
 	}
 
 	public int getId() {
@@ -32,20 +32,12 @@ public class Todo {
 		return date;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
 	public void setCompleted(boolean completed) {
 		this.completed = completed;
-	}
-
-	public void setDate(LocalDateTime date) {
-		this.date = date;
 	}
 
 	@Override
