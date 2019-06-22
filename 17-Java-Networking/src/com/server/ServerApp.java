@@ -66,12 +66,6 @@ public class ServerApp {
 		
 		Runnable task = () -> {
 			try {
-				TimeUnit.SECONDS.sleep(2);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
 				acceptService.accept();
 				acceptService.send();
 			} catch (IOException e) {

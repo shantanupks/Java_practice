@@ -9,50 +9,58 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client2 {
-	public static void main(String[] args) throws ClassNotFoundException {
-
+	public static void main(String[] args) throws ClassNotFoundException, UnknownHostException, IOException {
+		final Socket socket = new Socket("localhost", 8181);
 		Scanner scanner = new Scanner(System.in);
-		try {
-			Socket socket = new Socket("localhost", 8181);
-			
-			OutputStream out = socket.getOutputStream();
-			ObjectOutputStream oos = new ObjectOutputStream(out);
-//			
-//			String msg = "";
-//			
-//			System.out.println("Enter msg : ");
-//			msg = scanner.next();
-//			oos.writeObject(msg);
-//			//oos.close();
-			
-			
-			InputStream in = socket.getInputStream();
-			ObjectInputStream ois = new ObjectInputStream(in);
-			Object object = ois.readObject();
-			String resp = (String) object;
-			System.out.println("------> :"+resp);
-			
-			
 
-//			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-//			String msg = "";
-//
-//			System.out.println("Enter msg : ");
-//			msg = scanner.next();
-//			out.println(msg);
-//			System.out.println("sent");
+		Runnable read = () -> {
+			try {
+				// reading
+				InputStream in = socket.getInputStream();
+				BufferedReader br = new BufferedReader(new InputStreamReader(in));
+				ObjectInputStream ois = new ObjectInputStream(in);
 
-			//socket.close();
+				while (true) {
+//						Object object = ois.readObject();
+//						String resp = (String) object;
+					String resp = br.readLine();
+					System.out.println("------> :" + resp);
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		};
 
-	
+		Runnable write = () -> {
+			try {
+				// writing
+				OutputStream out = socket.getOutputStream();
+				ObjectOutputStream oos = new ObjectOutputStream(out);
+				String msg = "";
+				do {
+					System.out.println("Enter msg : ");
+					msg = scanner.next();
+					oos.writeObject(msg);
+				} while (msg != "bye");
+
+				//socket.close();
+				//scanner.close();
+
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		};
+
+		Thread writeThread = new Thread(write);
+		Thread readThread = new Thread(read);
+
+		writeThread.start();
+		readThread.start();
+
+	}
 }
-}
-

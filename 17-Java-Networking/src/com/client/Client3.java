@@ -20,13 +20,13 @@ public class Client3 {
 			
 			OutputStream out = socket.getOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(out);
-			
-			String msg = "";
-			
-			System.out.println("Enter msg : ");
-			msg = scanner.next();
-			oos.writeObject(msg);
-			//oos.close();
+//			
+//			String msg = "";
+//			
+//			System.out.println("Enter msg : ");
+//			msg = scanner.next();
+//			oos.writeObject(msg);
+//			//oos.close();
 			
 			
 			InputStream in = socket.getInputStream();
@@ -35,6 +35,16 @@ public class Client3 {
 			String resp = (String) object;
 			System.out.println("------> :"+resp);
 			
+			
+
+//			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+//			String msg = "";
+//
+//			System.out.println("Enter msg : ");
+//			msg = scanner.next();
+//			out.println(msg);
+//			System.out.println("sent");
 
 			//socket.close();
 
