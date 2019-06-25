@@ -20,26 +20,7 @@ import java.lang.reflect.Method;
 	String service();
 }
 
-@interface Before{
-	
-}
 
-@interface Test{
-	
-}
-
-class Test_Class{
-	@Before
-	public void doBefore(){
-		System.out.println("before setup");
-	}
-	
-	@Test 
-	public void TestSome() {
-		System.out.println("testing");
-	}
-	
-}
 
 
 //container
@@ -99,9 +80,6 @@ public class Anno_Ex {
 		
 		container.processRequest("update");
 		
-		Test_Class t = new Test_Class();
-		
-
 
 	}
 

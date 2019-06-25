@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
+import com.model.Company;
 import com.model.Product;
 
 /*
@@ -22,7 +23,9 @@ import com.model.Product;
 public class Serialization_Ex {
 	public static void main(String[] args) throws IOException {
 		
-		Product product = new Product(1, "item-1", 1000.00);
+		Company company = new Company("wissen");
+		Product product = new Product(1, "item-1", 1000.00);		
+		product.setCompany(company);
 		
 		File file = new File("product.ser");
 		FileOutputStream fileOutputStream = new FileOutputStream(file);
@@ -30,6 +33,11 @@ public class Serialization_Ex {
 		ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
 		
 		outputStream.writeObject(product);
+		
+		outputStream.flush();
+		outputStream.close();
+		
+		System.out.println("done....");
 
 	}
 }
